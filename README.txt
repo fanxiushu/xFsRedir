@@ -97,4 +97,4 @@ https://github.com/sahlberg/libnfs
 SMB是直接打开 \\\\server\\ShareFolder 方式的文件处理。
 SFTP是借用 libssh2 + openssl 库
 FTP是自己以socket为基础开发
-WebDaV， BaiduPCS，GitHUB都是借用 curl + openssl 库。
+WebDaV，OneDrive，GitHUB都是借用 curl + openssl 库。
