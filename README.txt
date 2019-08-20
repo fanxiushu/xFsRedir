@@ -27,6 +27,8 @@ GitHUB: https://github.com/fanxiushu
      从而保证各种各样的镜像存储方式都能被访问。
 2,  优化了目录重定向的某些IO性能。
 3,  路径文件名的处理改成UTF8编码为默认编码。
+更新日志：
+       https://blog.csdn.net/fanxiushu/article/details/99402380
 
 2018年更新日志：
 1，重写了虚拟磁盘镜像文件存储方式，以前的版本只是简单的利用稀疏文件来存储虚拟磁盘镜像。
