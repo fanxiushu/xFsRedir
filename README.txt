@@ -97,7 +97,7 @@ GitHUB: https://github.com/fanxiushu
       而FILE_OBJECT内部的两个重要参数 FsContext和FsContext2，在NTFS文件驱动是被指向一个NTFS文件系统未公开的结构对象SCB的，
       为了防止某些特殊驱动或程序直接使用FsContext或FsContext2指针而造成系统蓝屏，
       xfs_redir.sys驱动采用打开当前分区卷的根目录的FILE_OBJECT，然后把这个FILE_OBJECT的FsContext和FsContext2赋值给所有被拦截的FILE_OBJECT。
-      这样虽然能防止某些特殊驱动或程序直接访问FsContext而造成系统蓝屏，不过很显然，会造成访问的行为混乱(但是至少防止系统崩溃蓝屏。)
+      这样虽然能防止某些特殊驱动或程序直接访问FsContext而造成系统蓝屏，不过很显然，会造成这类特殊驱动或程序的访问行为混乱(但是至少防止系统崩溃蓝屏。)
       很不幸的，设置windows共享，就属于这类特殊的驱动或程序。 2020-10-20 特此注明原因。
 
    2，如果使用xFsRedir开启了新盘符，可能会造成windows的“磁盘管理器”无法正常打开，这是由于xFsRedir内部集成的虚拟磁盘驱动造成的。
