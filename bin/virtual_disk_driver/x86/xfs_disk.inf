@@ -1,0 +1,71 @@
+;
+;Fanxiushu 2020-04-17
+;
+
+[Version]
+Signature="$Windows NT$"
+Provider=%FXS%
+Class=SCSIAdapter
+ClassGUID={4D36E97B-E325-11CE-BFC1-08002BE10318}
+CatalogFile=xfs_disk.cat
+DriverVer=04/17/2020,1.0.0.1
+
+
+[Manufacturer]
+%FXS%=XfsDisk_Inst,NTX86,NTAMD64
+
+[XfsDisk_Inst.NTX86]
+%Desc%=XfsDisk,%HardwareId%
+
+[XfsDisk_Inst.NTAMD64]
+%Desc%=XfsDisk,%HardwareId%
+
+[XfsDisk]
+CopyFiles=@xfs_disk.sys
+
+[XfsDisk.HW]
+AddReg = xFsDisk_AddReg
+
+[xFsDisk_AddReg]
+HKR, "ScsiPort", "NeedsSystemShutdownNotification", 0x00010001, 1
+
+[XfsDisk.Services]
+AddService=xfs_disk,0x00000002,xFsDisk_Service_Inst,EventLog_Install
+
+[xFsDisk_Service_Inst]
+DisplayName    = %SVC_DESC%
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 1
+ServiceBinary  = %12%\xfs_disk.sys
+LoadOrderGroup = SCSI Miniport
+AddReg         = INST_pnp
+
+[INST_pnp]
+HKR, "Parameters\PnpInterface", "0", %REG_DWORD%, 0x00000001
+
+[EventLog_Install]
+AddReg = EventLog_AddReg
+
+[EventLog_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+333 = %DiskId1%,"",333
+
+[SourceDisksFiles]
+xfs_disk.sys  = 333
+
+[Strings]
+FXS = "Fanxiushu"
+Desc="Fanxiushu xFsRedir Virtual SCSI Adapter"
+SVC_DESC="Fanxiushu xFsRedir Virtual SCSI Miniport Service"
+DiskId1 = "XfsDisk Installation Disk #1"
+HardwareId="root\fanxiushu_xfs_disk"
+REG_EXPAND_SZ=0x00020000
+REG_DWORD=0x00010001
