@@ -15,13 +15,14 @@ CSDN: http://blog.csdn.net/fanxiushu
 GitHUB: https://github.com/fanxiushu
 本软件不属于任何组织和公司，版权归fanxiushu个人所有。 
                                           
-                                             范秀树 2015-2020
+                                             范秀树 2015-2021
 
 程序安装使用：
-进入到xfsredir目录下，选择你感兴趣的32或64位目录，
-然后把xFsRedir.exe，xfs_redir.sys，xfs_redir32.sys下载到本地电脑某个目录下，
-直接运行，加载服务。看到状态显示 驱动和服务都处于 Running 状态，说明已经成功运行了。
-***注意：因为新版本的程序与老版本程序并不兼容。
+进入到xfsredir目录下，选择你感兴趣版本号对应的 xFsRedir-X.X.X.X.zip 打包文件。
+下载到本地电脑，然后解压到某个目录下，运行 xFsRedir.exe ，加载服务。
+看到状态显示 驱动和服务都处于 Running 状态，说明已经成功运行了。
+
+***因为不同版本之间并不兼容，因此在替换版本的时候， 必须要一起替换(包括服务端xfs_rdsvr程序)。
 如果先前运行了老版本xFsRedir.exe，
 请先运行老版本程序，然后卸载服务，卸载驱动，
 再重启电脑，再次运行老版本程序，查看状态栏的服务和驱动都已经卸载了，这时才可放心删除老版本所有程序。
@@ -208,4 +209,4 @@ GitHUB: https://github.com/fanxiushu
 
 This software does not belong to any organization or company, and the copyright belongs to Fanxiushu.
 
-                                                           fanxiushu 2015-2020
+                                                           fanxiushu 2015-2021
